@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/examen?useSSL=false
+    username: root
+    password: 12345678
+  jpa:
+    hibernate:
+      ddl-auto: update # Crea y elimina tablas en cada inicio y cierre de la aplicación
+    show-sql: true # Muestra las consultas SQL en la consola
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect # Asegúrate de usar el dialecto adecuado para MySQL
+
+logging:
+  level:
+    root: INFO
+
+server:
+  port: 8080
