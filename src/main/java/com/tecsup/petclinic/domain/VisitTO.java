@@ -1,29 +1,17 @@
 package com.tecsup.petclinic.domain;
 
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
 public class VisitTO {
     private Long id;
+    private Long petId;
 
-    private String name;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate visitDate; // Utiliza LocalDate para manejar la fecha de la visita
 
-    private String apellido;
-
-    private String direccion;
-
-    public void setVisitDate(LocalDate visitDate) {
-    }
-
-    public void setDescription(String description) {
-    }
-
-    public void setPetId(int petId) {
-    }
+    private String description;
 }
